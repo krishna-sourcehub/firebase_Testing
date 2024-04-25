@@ -14,10 +14,16 @@ router.post("/", async (req, res) => {
         if(verifyuser=="INVALID_ID_TOKEN"){
             res.status(200).send("INVALID_ID_TOKEN");
         }
-        if(verifyuser=="API key not valid. Please pass a valid API key."){
+        else if(verifyuser=="API key not valid. Please pass a valid API key."){
             res.status(200).send("API key not valid. Please pass a valid API key.");
         }
+       
+        else if(verifyuser="User Found"){
+            console.log(`Authorized User`)
+            res.status(200).send(`Authorized User`);
+        }
         
+
         // console.log(loginCredentials);
         // if (loginCredentials === "user not found") {
         //     res.status(200).send("Invalid User name or Password");

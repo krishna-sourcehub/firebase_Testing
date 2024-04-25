@@ -25,6 +25,7 @@ const getUserData = async (idToken) => {
           const userData = response.data.users;
 
           console.log('User data:', userData);
+       
 
         if (response.status == "200") {
             console.log("User is Found");
@@ -48,10 +49,11 @@ const getUserData = async (idToken) => {
             // Save the new instance
             await userToSave.save();
             console.log("User data saved successfully");
+            return "User Found";
         }
 
 
-        return userData;
+     
 
     } catch (error) {
         if (error.response) {
